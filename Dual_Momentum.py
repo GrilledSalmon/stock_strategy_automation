@@ -31,6 +31,9 @@ er_BIL = get_earning_rate('BIL')
 er_EFA = get_earning_rate('EFA')
 
 if er_SPY > er_BIL:
-    print("{}를 매수하세요.".format(max(er_SPY, er_EFA)))
+    if er_SPY > er_EFA:
+        print("SPY를 매수하세요.")
+    else:
+        print("EFA를 매수하세요.")
 else:
     print("AGG를 매수하세요.")
